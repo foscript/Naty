@@ -45,6 +45,10 @@ function App() {
           </Link>
         </div>
       </Section>
+
+      <Section>
+        Test
+      </Section>
       <FooterOrganism />
     </RootOrganism>
   )
