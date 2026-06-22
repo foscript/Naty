@@ -22,7 +22,7 @@ export class FetchGitHubDataError extends Error {
     }
 
     super(`FetchGitHubData Error: ${message}`, options)
-    this.name = "FetchGitHubDataError"
+    this.name = "FetchGitHubData"
     this.status = status
   }
 }

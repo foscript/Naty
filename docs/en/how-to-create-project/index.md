@@ -5,4 +5,4 @@ This section explains how to create a project in detail.
 
 ## Table of contents
   - [Project Settings](#project-settings)
-  - [Third-party Template](#third-party-template)
+  - [Third-party Template](#third-party-templates)

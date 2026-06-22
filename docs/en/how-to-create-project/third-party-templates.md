@@ -1,4 +1,4 @@
-<h1 align="center">Third-party Template</h1>
+<h1 align="center">Third-party Templates</h1>
 If you use third-party templates, please add this option.
 
 ```bash

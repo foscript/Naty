@@ -1,0 +1,16 @@
+[
+  {
+    "title": "How to create project",
+    "path": "/index.md"
+  },
+
+  {
+    "title": "Project Settings",
+    "path": "/project-settings.md"
+  },
+
+  {
+    "title": "Third Party Templates",
+    "path": "/third-party-templates.md"
+  }
+]

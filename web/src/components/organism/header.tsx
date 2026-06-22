@@ -20,7 +20,7 @@ export function HeaderOrganism({ className, fixed }: { className?: string, fixed
 
   return (
     <header className={cn(
-      'border-b w-full px-4 py-4 bg-background flex items-center',
+      'border-b w-full px-4 py-4 bg-background/85 flex items-center',
       fixed ? 'fixed top-0' : 'sticky',
       className
     )}>

@@ -1,7 +1,4 @@
-import { createFileRoute, Link } from '@tanstack/react-router'
-import { Button } from '@/components/shadcn/ui/button'
-import { cn } from '@/lib/shadcn/utils'
-import { useTranslation } from 'react-i18next'
+import { createFileRoute } from '@tanstack/react-router'
 
 // Components
 import { RootOrganism } from '@/components/organism/root'
@@ -9,14 +6,26 @@ import { HeaderOrganism } from '@/components/organism/header'
 import { FooterOrganism } from '@/components/organism/footer'
 
 // Test
-import { fetchGithubData } from '@/lib/github'
-import i18n from "i18next"
+import { fetchGithubData, FetchGitHubDataError } from '@/lib/github'
+import { toast } from 'sonner'
 (async () => {
   try {
-    const data = await fetchGithubData(`/docs/${i18n.resolvedLanguage}/how-to-create-project/index.md`)
-    console.log(data)
+    const data = await fetchGithubData('/docs/en/order.json')
+    if (data.type === 'file') {
+      const jsonData = JSON.parse(data.content)
+      console.log(jsonData)
+      window.alert(jsonData)
+    } else {
+      toast.error("データの形式が違い、エラーが発生しました。")
+    }
   } catch(error) {
-    console.error(error)
+    if (error instanceof FetchGitHubDataError) {
+      console.error(error)
+      toast.error("データの読み込みに失敗しました。")
+    } else {
+      console.error(error)
+      toast.error("不明なエラーが発生しました。")
+    }
   }
 })()
 
@@ -25,40 +34,13 @@ export const Route = createFileRoute('/docs')({
 })
 
 function App() {
-  function Section({ children, className }: { children: React.ReactNode; className?: string }) {
-    return (
-      <div className={cn('min-h-svh w-full px-6 flex justify-center items-center', className)}>
-        {children}
-      </div>
-    )
-  }
-
-  const { t } = useTranslation()
-
   return (
-    <RootOrganism className='naty-bg-grid'>
-      <HeaderOrganism fixed />
+    <RootOrganism>
+      <HeaderOrganism />
 
-      <Section className='flex-col gap-6 text-center animate-in fade-in slide-in-from-bottom-5 ease-out duration-500'>
-        <div className='flex flex-col gap-2 items-center'>
-          <img src='/favicon.svg' alt='Logo' className='size-8' />
-          <h1 className='text-4xl font-bold'>{t('routes.index.section.0.description')}</h1>
-        </div>
-
-        <div className='flex gap-4'>
-          <Link to='/templates'>
-            <Button className='px-2.5 py-4.5'>
-              {t('routes.index.section.0.seeTemplates')}
-            </Button>
-          </Link>
-    
-          <Link to='/docs'>
-            <Button className='px-2.5 py-4.5' variant='outline'>
-              {t('routes.index.section.0.docs')}
-            </Button>
-          </Link>
-        </div>
-      </Section>
+      <div>
+        Hello World
+      </div>
 
       <FooterOrganism />
     </RootOrganism>
