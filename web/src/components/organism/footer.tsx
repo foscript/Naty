@@ -21,10 +21,10 @@ export function FooterOrganism({ className }: { className?: string }) {
   }
 
   return (
-    <footer className={cn('border-t w-full px-8 py-4 bg-background/85 flex items-center', className)}>
-      <Link to='/' className='text-xl font-medium text-muted-foreground hover:text-foreground'>{env.VITE_APP_NAME}</Link>
+    <footer className={cn('border-t w-full p-6 sm:p-4 bg-background/85 flex items-center', className)}>
+      <Link to='/' className='text-2xl font-medium text-muted-foreground hover:text-foreground'>{env.VITE_APP_NAME}</Link>
 
-      <div className='ml-auto flex items-center gap-3'>
+      <div className='ml-auto flex items-center sm:gap-3 gap-4'>
         <SocialIcon href={env.VITE_SOCIAL_GITHUB_URL} icon={FaGithub} />
         <SocialIcon href={env.VITE_SOCIAL_INSTAGRAM_URL} icon={FaInstagram} />
         <SocialIcon href={env.VITE_SOCIAL_X_URL} icon={FaXTwitter} />

@@ -27,7 +27,7 @@ function App() {
     <RootOrganism className='naty-bg-grid'>
       <HeaderOrganism fixed />
 
-      <Section className='flex-col gap-6 text-center animate-in fade-in slide-in-from-bottom-5 ease-out duration-500'>
+      <Section className='flex-col gap-6 text-center'>
         <div className='flex flex-col gap-2 items-center'>
           <img src='/favicon.svg' alt='Logo' className='size-8' />
           <h1 className='text-4xl font-bold'>{t('routes.index.section.0.description')}</h1>

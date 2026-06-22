@@ -37,11 +37,6 @@ function App() {
   return (
     <RootOrganism>
       <HeaderOrganism />
-
-      <div>
-        Hello World
-      </div>
-
       <FooterOrganism />
     </RootOrganism>
   )
