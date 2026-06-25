@@ -10,8 +10,7 @@ The effortless starter for every project.
 ## Table of contents
 - [Quick Start](#quick-start)
 - [What is this?](#what-is-this)
-- [How to create project?](./docs/en/how-to-create-project/index.md)
-- [How to create template?](./docs/en/how-to-create-template/index.md)
+- [Docs](https://naty.foscript.com/docs)
 - [License](#license)
 
 <br>

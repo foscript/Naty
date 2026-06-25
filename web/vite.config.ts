@@ -1,18 +1,22 @@
 import path from 'path'
-
-// Plugins
 import { defineConfig } from 'vite'
-import react, { reactCompilerPreset } from '@vitejs/plugin-react'
-import { tanstackRouter } from '@tanstack/router-plugin/vite'
-import babel from '@rolldown/plugin-babel'
-import tailwindcss from '@tailwindcss/vite'
+
+import reactPlugin, { reactCompilerPreset } from '@vitejs/plugin-react'
+import { tanstackRouter as tanstackRouterPlugin } from '@tanstack/router-plugin/vite'
+import babelPlugin from '@rolldown/plugin-babel'
+import tailwindcssPlugin from '@tailwindcss/vite'
+import mdxPlugin from '@mdx-js/rollup'
 
 export default defineConfig({
   plugins: [
-    tanstackRouter(),
-    react(),
-    babel({ presets: [reactCompilerPreset()] }),
-    tailwindcss()
+    mdxPlugin({
+      providerImportSource: '@mdx-js/react'
+    }),
+    
+    reactPlugin(),
+    babelPlugin({ presets: [reactCompilerPreset()] }),
+    tailwindcssPlugin(),
+    tanstackRouterPlugin()
   ],
 
   resolve: {
