@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next'
 import { RootOrganism } from '@/components/organism/root'
 import { HeaderOrganism } from '@/components/organism/header'
 import { FooterOrganism } from '@/components/organism/footer'
+import { LogoAtom } from '@/components/atom/logo'
 
 export const Route = createFileRoute('/')({
   component: App
@@ -29,7 +30,7 @@ function App() {
 
       <Section className='flex-col gap-6 text-center'>
         <div className='flex flex-col gap-2 items-center'>
-          <img src='/favicon.svg' alt='Logo' className='size-8' />
+          <LogoAtom className='size-8' />
           <h1 className='text-4xl font-bold'>{t('routes.index.section.0.description')}</h1>
         </div>
 

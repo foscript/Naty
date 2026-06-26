@@ -18,7 +18,7 @@ export function NotfoundTemplate() {
       <HeaderOrganism fixed />
       <div className='flex items-center gap-4'>
         <h2 className='text-2xl font-bold'>404</h2>
-        <h1 className='text-md'>{t('components.template.notfound.title')}</h1>
+        <h1 className='text-md'>{t('components.only.notfound.title')}</h1>
       </div>
     </RootOrganism>
   )

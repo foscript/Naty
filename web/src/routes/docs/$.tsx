@@ -1,9 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/docs/$')({
-  component: RouteComponent,
+  component: App,
 })
 
-function RouteComponent() {
-  return <div>Hello "/docs/$notfound"!</div>
+function App() {
+  return
 }

@@ -12,12 +12,6 @@
   },
 
   "components": {
-    "template": {
-      "notfound": {
-        "title": "Page Not Found"
-      }
-    },
-
     "atom": {
       "copyButton": ["Copy", "Copied!", "Failed..."]
     },
@@ -30,6 +24,10 @@
             "description": "The AI will explain it simply for you instead."
           }
         }
+      },
+
+      "notfound": {
+        "title": "Page Not Found"
       }
     }
   }

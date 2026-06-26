@@ -15,16 +15,18 @@ export function CopyButtonAtom({ text, show, ...props }: ButtonType & { text: st
   const { t } = useTranslation()
 
   async function handleCopy() {
+    if (state != 'default') return
+
     try {
       await navigator.clipboard.writeText(text)
       setState('complete')
-
+    } catch {
+      setState('error')
+    } finally {
       // Reset state after 3 seccounds
       setTimeout(() => {
         setState('default')
       }, 3000)
-    } catch {
-      setState('error')
     }
   }
 

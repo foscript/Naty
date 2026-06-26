@@ -1,10 +1,10 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { RootDocsOnly } from '@/components/only/docs/root'
 
-import Docs from '@/docs/getting-started.mdx'
-import raw from '@/docs/getting-started.mdx?url'
+import Docs from '@/docs/create-template/index.mdx'
+import raw from '@/docs/create-template/index.mdx?raw'
 
-export const Route = createFileRoute('/docs/getting-started')({
+export const Route = createFileRoute('/docs/create-template/')({
   component: App
 })
 

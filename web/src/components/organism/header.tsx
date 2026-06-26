@@ -1,6 +1,7 @@
 import { cn } from '@/lib/shadcn/utils'
 import { env } from '@/lib/env'
 import { Link, type LinkProps } from '@tanstack/react-router'
+import { LogoAtom } from '../atom/logo'
 
 export function HeaderOrganism({ className, fixed }: { className?: string, fixed?: boolean }) {
   function NavLink({ to, children }: { to: LinkProps['to'], children: React.ReactNode }) {
@@ -23,7 +24,7 @@ export function HeaderOrganism({ className, fixed }: { className?: string, fixed
       className
     )}>
       <Link to='/' className='flex items-center gap-2'>
-        <img src='/favicon.svg' alt={env.VITE_APP_NAME} className='size-6' />
+        <LogoAtom className='size-6' />
         <p className='font-semibold text-2xl'>{env.VITE_APP_NAME}</p>
       </Link>
 

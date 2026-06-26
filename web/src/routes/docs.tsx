@@ -25,13 +25,13 @@ export const sideLinkList: SideLinkList[] = [
   },
 
   {
-    title: 'How to create your template?',
-    link: '/docs/how-to-create-your-template',
+    title: 'Create Template',
+    link: '/docs/create-template',
 
     links: [
       {
         title: 'Quick Start',
-        link: '/docs/how-to-create-your-template/quick-start'
+        link: '/docs/create-template/quick-start'
       }
     ]
   }
@@ -42,7 +42,7 @@ function SideListLink({ link, title }: SideLinkListLink) {
     <Link
       to={link}
       className='text-sm truncate w-fit'
-      activeProps={{ className: 'text-foreground' }}
+      activeProps={{ className: 'text-sidebar-primary' }}
       inactiveProps={{ className: 'text-muted-foreground hover:text-foreground' }}
     >
       {title}
@@ -68,7 +68,8 @@ function SideLinkList({ link, title, links }: SideLinkList) {
       <Link
         to={link}
         className='cursor-pointer text-sm truncate w-fit'
-        activeProps={{ className: 'text-foreground' }}
+        activeOptions={{ exact: true }}
+        activeProps={{ className: 'text-sidebar-primary' }}
         inactiveProps={{ className: 'text-muted-foreground hover:text-foreground' }}
       >
         {title}

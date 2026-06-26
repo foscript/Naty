@@ -1,6 +1,6 @@
 import { createElement } from 'react'
 import { RouterProvider, createRouter } from '@tanstack/react-router'
-import { NotfoundTemplate } from '@/components/template/notfound'
+import { NotfoundTemplate } from '@/components/only/notfound'
 import { routeTree } from '@/routeTree.gen'
 
 const routes = createRouter({
