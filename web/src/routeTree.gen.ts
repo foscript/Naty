@@ -13,6 +13,10 @@ import { Route as TemplatesRouteImport } from './routes/templates'
 import { Route as DocsRouteImport } from './routes/docs'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DocsIndexRouteImport } from './routes/docs/index'
+import { Route as DocsGettingStartedRouteImport } from './routes/docs/getting-started'
+import { Route as Docs404RouteImport } from './routes/docs/$404'
+import { Route as DocsHowToCreateYourTemplateIndexRouteImport } from './routes/docs/how-to-create-your-template/index'
+import { Route as DocsHowToCreateYourTemplateQuickStartRouteImport } from './routes/docs/how-to-create-your-template/quick-start'
 
 const TemplatesRoute = TemplatesRouteImport.update({
   id: '/templates',
@@ -34,31 +38,89 @@ const DocsIndexRoute = DocsIndexRouteImport.update({
   path: '/',
   getParentRoute: () => DocsRoute,
 } as any)
+const DocsGettingStartedRoute = DocsGettingStartedRouteImport.update({
+  id: '/getting-started',
+  path: '/getting-started',
+  getParentRoute: () => DocsRoute,
+} as any)
+const Docs404Route = Docs404RouteImport.update({
+  id: '/$404',
+  path: '/$404',
+  getParentRoute: () => DocsRoute,
+} as any)
+const DocsHowToCreateYourTemplateIndexRoute =
+  DocsHowToCreateYourTemplateIndexRouteImport.update({
+    id: '/how-to-create-your-template/',
+    path: '/how-to-create-your-template/',
+    getParentRoute: () => DocsRoute,
+  } as any)
+const DocsHowToCreateYourTemplateQuickStartRoute =
+  DocsHowToCreateYourTemplateQuickStartRouteImport.update({
+    id: '/how-to-create-your-template/quick-start',
+    path: '/how-to-create-your-template/quick-start',
+    getParentRoute: () => DocsRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/docs': typeof DocsRouteWithChildren
   '/templates': typeof TemplatesRoute
+  '/docs/$404': typeof Docs404Route
+  '/docs/getting-started': typeof DocsGettingStartedRoute
   '/docs/': typeof DocsIndexRoute
+  '/docs/how-to-create-your-template/quick-start': typeof DocsHowToCreateYourTemplateQuickStartRoute
+  '/docs/how-to-create-your-template/': typeof DocsHowToCreateYourTemplateIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/templates': typeof TemplatesRoute
+  '/docs/$404': typeof Docs404Route
+  '/docs/getting-started': typeof DocsGettingStartedRoute
   '/docs': typeof DocsIndexRoute
+  '/docs/how-to-create-your-template/quick-start': typeof DocsHowToCreateYourTemplateQuickStartRoute
+  '/docs/how-to-create-your-template': typeof DocsHowToCreateYourTemplateIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/docs': typeof DocsRouteWithChildren
   '/templates': typeof TemplatesRoute
+  '/docs/$404': typeof Docs404Route
+  '/docs/getting-started': typeof DocsGettingStartedRoute
   '/docs/': typeof DocsIndexRoute
+  '/docs/how-to-create-your-template/quick-start': typeof DocsHowToCreateYourTemplateQuickStartRoute
+  '/docs/how-to-create-your-template/': typeof DocsHowToCreateYourTemplateIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/docs' | '/templates' | '/docs/'
+  fullPaths:
+    | '/'
+    | '/docs'
+    | '/templates'
+    | '/docs/$404'
+    | '/docs/getting-started'
+    | '/docs/'
+    | '/docs/how-to-create-your-template/quick-start'
+    | '/docs/how-to-create-your-template/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/templates' | '/docs'
-  id: '__root__' | '/' | '/docs' | '/templates' | '/docs/'
+  to:
+    | '/'
+    | '/templates'
+    | '/docs/$404'
+    | '/docs/getting-started'
+    | '/docs'
+    | '/docs/how-to-create-your-template/quick-start'
+    | '/docs/how-to-create-your-template'
+  id:
+    | '__root__'
+    | '/'
+    | '/docs'
+    | '/templates'
+    | '/docs/$404'
+    | '/docs/getting-started'
+    | '/docs/'
+    | '/docs/how-to-create-your-template/quick-start'
+    | '/docs/how-to-create-your-template/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -97,15 +159,52 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DocsIndexRouteImport
       parentRoute: typeof DocsRoute
     }
+    '/docs/getting-started': {
+      id: '/docs/getting-started'
+      path: '/getting-started'
+      fullPath: '/docs/getting-started'
+      preLoaderRoute: typeof DocsGettingStartedRouteImport
+      parentRoute: typeof DocsRoute
+    }
+    '/docs/$404': {
+      id: '/docs/$404'
+      path: '/$404'
+      fullPath: '/docs/$404'
+      preLoaderRoute: typeof Docs404RouteImport
+      parentRoute: typeof DocsRoute
+    }
+    '/docs/how-to-create-your-template/': {
+      id: '/docs/how-to-create-your-template/'
+      path: '/how-to-create-your-template'
+      fullPath: '/docs/how-to-create-your-template/'
+      preLoaderRoute: typeof DocsHowToCreateYourTemplateIndexRouteImport
+      parentRoute: typeof DocsRoute
+    }
+    '/docs/how-to-create-your-template/quick-start': {
+      id: '/docs/how-to-create-your-template/quick-start'
+      path: '/how-to-create-your-template/quick-start'
+      fullPath: '/docs/how-to-create-your-template/quick-start'
+      preLoaderRoute: typeof DocsHowToCreateYourTemplateQuickStartRouteImport
+      parentRoute: typeof DocsRoute
+    }
   }
 }
 
 interface DocsRouteChildren {
+  Docs404Route: typeof Docs404Route
+  DocsGettingStartedRoute: typeof DocsGettingStartedRoute
   DocsIndexRoute: typeof DocsIndexRoute
+  DocsHowToCreateYourTemplateQuickStartRoute: typeof DocsHowToCreateYourTemplateQuickStartRoute
+  DocsHowToCreateYourTemplateIndexRoute: typeof DocsHowToCreateYourTemplateIndexRoute
 }
 
 const DocsRouteChildren: DocsRouteChildren = {
+  Docs404Route: Docs404Route,
+  DocsGettingStartedRoute: DocsGettingStartedRoute,
   DocsIndexRoute: DocsIndexRoute,
+  DocsHowToCreateYourTemplateQuickStartRoute:
+    DocsHowToCreateYourTemplateQuickStartRoute,
+  DocsHowToCreateYourTemplateIndexRoute: DocsHowToCreateYourTemplateIndexRoute,
 }
 
 const DocsRouteWithChildren = DocsRoute._addFileChildren(DocsRouteChildren)

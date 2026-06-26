@@ -1,17 +1,15 @@
 import { cn } from '@/lib/shadcn/utils'
 import { env } from '@/lib/env'
-import { Link, useLocation, type LinkProps } from '@tanstack/react-router'
+import { Link, type LinkProps } from '@tanstack/react-router'
 
 export function HeaderOrganism({ className, fixed }: { className?: string, fixed?: boolean }) {
   function NavLink({ to, children }: { to: LinkProps['to'], children: React.ReactNode }) {
-    const { pathname } = useLocation()
-
     return (
-      <Link 
+      <Link
         to={to}
-        className={cn('text-sm',
-          pathname === to ? 'text-sidebar-primary' : 'hover:text-foreground text-muted-foreground'
-        )}
+        className='text-sm'
+        activeProps={{ className: 'text-sidebar-primary' }}
+        inactiveProps={{ className: 'text-muted-foreground hover:text-foreground' }}
       >
         {children}
       </Link>
@@ -20,8 +18,8 @@ export function HeaderOrganism({ className, fixed }: { className?: string, fixed
 
   return (
     <header className={cn(
-      'border-b w-full px-4 py-4 bg-background/85 flex items-center',
-      fixed ? 'fixed top-0' : 'sticky',
+      'border-b top-0 w-full px-4 py-4 bg-background flex items-center',
+      fixed ? 'fixed' : 'sticky',
       className
     )}>
       <Link to='/' className='flex items-center gap-2'>

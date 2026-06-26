@@ -21,7 +21,7 @@ export function FooterOrganism({ className }: { className?: string }) {
   }
 
   return (
-    <footer className={cn('border-t w-full p-6 sm:p-4 bg-background/85 flex items-center', className)}>
+    <footer className={cn('border-t w-full px-4 py-6 bg-background flex items-center', className)}>
       <Link to='/' className='text-2xl font-medium text-muted-foreground hover:text-foreground'>{env.VITE_APP_NAME}</Link>
 
       <div className='ml-auto flex items-center sm:gap-3 gap-4'>

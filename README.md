@@ -23,7 +23,7 @@ The effortless starter for every project.
 
 <br>
 
-## What is this?
+## What is Naty?
 - This tool allows you to create a new project using your favorite templates.
 - You can skip tedious settings and start development immediately.
 

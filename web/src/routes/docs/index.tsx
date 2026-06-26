@@ -1,10 +1,15 @@
+import { useEffect } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
-import Docs from '@/docs/en/index.mdx'
+import { useNavigate } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/docs/')({
   component: App
 })
 
 function App() {
-  return <Docs />
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    navigate({ to: '/docs/getting-started' })
+  }, [navigate])
 }
