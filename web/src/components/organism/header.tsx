@@ -25,7 +25,7 @@ export function HeaderOrganism({ className, fixed }: { className?: string, fixed
     )}>
       <Link to='/' className='flex items-center gap-2'>
         <LogoAtom className='size-6' />
-        <p className='font-semibold text-2xl'>{env.VITE_APP_NAME}</p>
+        <p className='font-semibold text-2xl'>{env.appName}</p>
       </Link>
 
       <div className='ml-auto items-center gap-3 hidden sm:flex'>
