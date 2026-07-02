@@ -10,7 +10,7 @@ The effortless starter for every project.
 ## Table of contents
 - [Quick Start](#quick-start)
 - [What is this?](#what-is-this)
-- [Docs](https://naty.foscript.com/docs)
+- [Docs](#docs)
 - [License](#license)
 
 <br>
@@ -19,7 +19,7 @@ The effortless starter for every project.
 1. Run `npm create naty@latest`.
 2. Configure project settings.
 3. Run `cd "Project Name"` to move to the project directory.
-4. Run `npm run dev`
+4. Run `npm run dev` to start develop!.
 
 <br>
 
@@ -29,5 +29,8 @@ The effortless starter for every project.
 
 <br>
 
+## Docs
+Please see [here](https://naty.foscript.com/docs) for detailed documation.
+
 ## License
-This project is being developed under the [MIT License](./LICENSE).
+All project is being developed under the [MIT License](./LICENSE).

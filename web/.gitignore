@@ -1,6 +1,9 @@
+# Unnecessary
 *.log
 node_modules/
 dist/
-.env.*
-!.env
 .tanstack/
+
+# Secret
+.env.*
+!.env.example
